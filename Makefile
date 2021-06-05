@@ -6,7 +6,7 @@
 #    By: bledda <bledda@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/05 05:34:19 by bledda            #+#    #+#              #
-#    Updated: 2021/06/05 06:25:22 by bledda           ###   ########.fr        #
+#    Updated: 2021/06/05 06:40:23 by bledda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,12 +68,13 @@ OBJSBONUS	= ${SRCSBONUS:.c=.o}
 CC			= gcc
 CFLAGS  	= -Wall -Wextra -Werror
 RM			= rm -f
+AR			= ar -rcs
 
 $(NAME):	${OBJS}
-			ar -rcs ${NAME} ${OBJS}
+			${AR} ${NAME} ${OBJS}
 
-.c.o:
-			${CC} ${CFLAGS} -c $< -o $@
+bonus: 		${OBJSBONUS}
+			${AR} ${NAME} ${OBJSBONUS}
 
 all:		${NAME} bonus
 
@@ -84,8 +85,5 @@ fclean:		clean
 			${RM} ${NAME}
 
 re:			fclean all
-
-bonus: 		${OBJSBONUS}
-			ar -rcs ${NAME} ${OBJSBONUS}
 
 .PHONY: 	all clean fclean re bonus
