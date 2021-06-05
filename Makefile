@@ -6,59 +6,61 @@
 #    By: bledda <bledda@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/05 05:34:19 by bledda            #+#    #+#              #
-#    Updated: 2021/06/05 05:39:53 by bledda           ###   ########.fr        #
+#    Updated: 2021/06/05 06:13:52 by bledda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 
-SRCS		= ft_memset.c \
-			ft_bzero.c \
-			ft_memcpy.c \
-			ft_memccpy.c \
-			ft_atoi.c \
-			ft_strlen.c \
-			ft_isdigit.c \
-			ft_isalpha.c \
-			ft_isalnum.c \
-			ft_isascii.c \
-			ft_isprint.c \
-			ft_memchr.c \
-			ft_memcmp.c \
-			ft_memmove.c \
-			ft_strchr.c \
-			ft_strrchr.c \
-			ft_strlcpy.c \
-			ft_strlcat.c \
-			ft_calloc.c \
-			ft_strdup.c \
-			ft_strncmp.c \
-			ft_strnstr.c \
-			ft_tolower.c \
-			ft_toupper.c \
-			ft_split.c \
-			ft_strjoin.c \
-			ft_itoa.c \
-			ft_substr.c \
-			ft_putchar_fd.c \
-			ft_putendl_fd.c \
-			ft_putnbr_fd.c \
-			ft_putstr_fd.c \
-			ft_strmapi.c \
-			ft_strtrim.c \
-			ft_isset_tab.c \
-			ft_isset.c \
-			ft_iswhitespace.c
+FOLDER		= src/
 
-SRCSBONUS	= ft_lstnew.c \
-			ft_lstadd_front.c \
-			ft_lstsize.c \
-			ft_lstlast.c \
-			ft_lstadd_back.c \
-			ft_lstdelone.c \
-			ft_lstclear.c \
-			ft_lstiter.c \
-			ft_lstmap.c
+SRCS		= ${FOLDER}ft_memset.c \
+			${FOLDER}ft_bzero.c \
+			${FOLDER}ft_memcpy.c \
+			${FOLDER}ft_memccpy.c \
+			${FOLDER}ft_atoi.c \
+			${FOLDER}ft_strlen.c \
+			${FOLDER}ft_isdigit.c \
+			${FOLDER}ft_isalpha.c \
+			${FOLDER}ft_isalnum.c \
+			${FOLDER}ft_isascii.c \
+			${FOLDER}ft_isprint.c \
+			${FOLDER}ft_memchr.c \
+			${FOLDER}ft_memcmp.c \
+			${FOLDER}ft_memmove.c \
+			${FOLDER}ft_strchr.c \
+			${FOLDER}ft_strrchr.c \
+			${FOLDER}ft_strlcpy.c \
+			${FOLDER}ft_strlcat.c \
+			${FOLDER}ft_calloc.c \
+			${FOLDER}ft_strdup.c \
+			${FOLDER}ft_strncmp.c \
+			${FOLDER}ft_strnstr.c \
+			${FOLDER}ft_tolower.c \
+			${FOLDER}ft_toupper.c \
+			${FOLDER}ft_split.c \
+			${FOLDER}ft_strjoin.c \
+			${FOLDER}ft_itoa.c \
+			${FOLDER}ft_substr.c \
+			${FOLDER}ft_putchar_fd.c \
+			${FOLDER}ft_putendl_fd.c \
+			${FOLDER}ft_putnbr_fd.c \
+			${FOLDER}ft_putstr_fd.c \
+			${FOLDER}ft_strmapi.c \
+			${FOLDER}ft_strtrim.c \
+			${FOLDER}ft_isset_tab.c \
+			${FOLDER}ft_isset.c \
+			${FOLDER}ft_iswhitespace.c
+
+SRCSBONUS	= ${FOLDER}ft_lstnew.c \
+			${FOLDER}ft_lstadd_front.c \
+			${FOLDER}ft_lstsize.c \
+			${FOLDER}ft_lstlast.c \
+			${FOLDER}ft_lstadd_back.c \
+			${FOLDER}ft_lstdelone.c \
+			${FOLDER}ft_lstclear.c \
+			${FOLDER}ft_lstiter.c \
+			${FOLDER}ft_lstmap.c
 
 OBJS		= ${SRCS:.c=.o}
 OBJSBONUS	= ${SRCSBONUS:.c=.o}
