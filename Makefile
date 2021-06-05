@@ -70,7 +70,7 @@ $(NAME):	${OBJS}
 			ar -rcs ${NAME} ${OBJS}
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -c $< -o $@
 
 all:		${NAME}
 
@@ -82,7 +82,7 @@ fclean:		clean
 
 re:			fclean all
 
-bonus:	${OBJS} ${OBJSBONUS}
-			ar -rcs ${NAME} $^
+bonus: ${NAME} ${OBJSBONUS}
+			ar -rcs ${NAME} ${OBJSBONUS}
 
-.PHONY: $(NAME) all bonus clean fclean re
+.PHONY: all clean fclean re bonus
