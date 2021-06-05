@@ -6,11 +6,13 @@
 #    By: bledda <bledda@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/05 05:34:19 by bledda            #+#    #+#              #
-#    Updated: 2021/06/05 06:40:23 by bledda           ###   ########.fr        #
+#    Updated: 2021/06/05 07:13:03 by bledda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
+
+HEADER_FILE = header/libft.h
 
 FOLDER		= src/
 
@@ -70,19 +72,28 @@ CFLAGS  	= -Wall -Wextra -Werror
 RM			= rm -f
 AR			= ar -rcs
 
-$(NAME):	${OBJS}
-			${AR} ${NAME} ${OBJS}
+ifdef WITH_BONUS
+OBJ 	= $(OBJS) $(OBJSBONUS)
+else
+OBJ 	= $(OBJS)
+endif
 
-bonus: 		${OBJSBONUS}
-			${AR} ${NAME} ${OBJSBONUS}
+$(NAME):	${OBJ}
+			${AR} ${NAME} ${OBJ}
 
-all:		${NAME} bonus
+bonus: 		
+			$(MAKE) WITH_BONUS=1
+
+all:		${NAME}
+
+%.o: %.c	$(HEADER_FILE)
+			$(CC) -c $(CFLAGS) -o $@ $<
 
 clean:
-			${RM} ${OBJS} ${OBJSBONUS}
+			${RM} $(OBJS) $(OBJSBONUS)
 
 fclean:		clean
-			${RM} ${NAME}
+			rm -f $(NAME)
 
 re:			fclean all
 
