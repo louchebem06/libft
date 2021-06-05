@@ -6,7 +6,7 @@
 #    By: bledda <bledda@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/05 05:34:19 by bledda            #+#    #+#              #
-#    Updated: 2021/06/05 06:13:52 by bledda           ###   ########.fr        #
+#    Updated: 2021/06/05 06:25:22 by bledda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,4 +88,4 @@ re:			fclean all
 bonus: 		${OBJSBONUS}
 			ar -rcs ${NAME} ${OBJSBONUS}
 
-.PHONY: all clean fclean re bonus
+.PHONY: 	all clean fclean re bonus
